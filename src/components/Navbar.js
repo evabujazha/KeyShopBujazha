@@ -1,4 +1,6 @@
+import React from "react";
 import "../App.css";
+import CartWidget from "./CartWidget";
 
 const Navbar = () => {
   return (
@@ -10,6 +12,9 @@ const Navbar = () => {
           <a href="/#">Sistema Operativo</a>
           <a href="/#">Software</a>
           <a href="/#">Juegos</a>
+          <a href="#">
+            <CartWidget />
+          </a>
         </nav>
       </header>
     </div>
