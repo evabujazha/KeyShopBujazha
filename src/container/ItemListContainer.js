@@ -8,6 +8,8 @@ const ItemListContainer = () => {
       tipo="Retail"
       duracion="De por vida"
       precio="5"
+      stock={10}
+      initial={1}
     />
   );
 };

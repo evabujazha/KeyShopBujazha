@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "./ItemCount.js";
 
 const Item = (props) => {
   return (
@@ -22,6 +23,7 @@ const Item = (props) => {
           </button>
         </div>
       </div>
+      <ItemCount />
     </>
   );
 };

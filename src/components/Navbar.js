@@ -12,7 +12,7 @@ const Navbar = () => {
           <a href="/#">Sistema Operativo</a>
           <a href="/#">Software</a>
           <a href="/#">Juegos</a>
-          <a href="#">
+          <a href="/#">
             <CartWidget />
           </a>
         </nav>
