@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Item from "../components/Item";
+import ItemList from "../components/ItemList";
 import CustomFetch from "../utils/CustomFetch";
 import dataFromDB from "../utils/Products";
 
@@ -13,15 +13,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      {data.map((product) => (
-        <Item
-          name={product.name}
-          img={product.img}
-          tipo={product.tipo}
-          duracion={product.duracion}
-          precio={product.precio}
-        />
-      ))}
+      <ItemList data={data} />
     </>
   );
 };
