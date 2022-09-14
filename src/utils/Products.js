@@ -6,6 +6,7 @@ const dataFromDB = [
     duracion: "de por vida",
     precio: "1500",
     stock: 29,
+    id: 1,
   },
   {
     name: "Windows 11 Home",
@@ -14,6 +15,7 @@ const dataFromDB = [
     duracion: "de por vida",
     precio: "1850",
     stock: 11,
+    id: 2,
   },
   {
     name: "Office 2021",
@@ -22,6 +24,7 @@ const dataFromDB = [
     duracion: "1 año",
     precio: "2100",
     stock: 11,
+    id: 3,
   },
 ];
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function ItemCount({ stock = 10, initial = 1 }) {
+function ItemCount({ stock = 1, initial = 1 }) {
   const [count, setCounter] = useState(initial);
 
   useEffect(() => {

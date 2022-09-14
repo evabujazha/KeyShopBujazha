@@ -6,13 +6,7 @@ const ItemList = ({ data }) => {
     <>
       {data.length > 0 ? (
         data.map((product) => (
-          <Item
-            name={product.name}
-            img={product.img}
-            tipo={product.tipo}
-            duracion={product.duracion}
-            precio={product.precio}
-          />
+          <Item name={product.name} img={product.img} precio={product.precio} />
         ))
       ) : (
         <p>Cargando...</p>

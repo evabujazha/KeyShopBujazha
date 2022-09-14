@@ -1,5 +1,4 @@
 import React from "react";
-import ItemCount from "./ItemCount.js";
 
 const Item = (props) => {
   return (
@@ -10,16 +9,11 @@ const Item = (props) => {
         </div>
         <div class="card-body">
           <img src={props.img} class="img-thumbnail" alt={props.name} />
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>Tipo de licencia: {props.tipo}</li>
-            <li>Duracion: {props.duracion}</li>
-          </ul>
           <button type="button" class="w-100 btn btn-lg btn-outline-primary">
             ${props.precio}
           </button>
         </div>
       </div>
-      <ItemCount />
     </>
   );
 };
