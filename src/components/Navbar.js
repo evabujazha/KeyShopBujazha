@@ -1,18 +1,21 @@
 import React from "react";
 import "../App.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <header>
-        <h1>Licencias Arg</h1>
+        <h1>
+          <Link to={`/`}>Licencias Arg</Link>
+        </h1>
         <nav>
-          <a href="/#">Home</a>
-          <a href="/#">Sistema Operativo</a>
-          <a href="/#">Software</a>
-          <a href="/#">Juegos</a>
-          <a href="/#">
+          <Link to="/"> Home </Link>
+          <Link to="/category/SistemaOperativo"> Sistema Operativo </Link>
+          <Link to="/category/Software"> Software </Link>
+          <Link to="/category/Juegos"> Juegos </Link>
+          <a>
             <CartWidget />
           </a>
         </nav>

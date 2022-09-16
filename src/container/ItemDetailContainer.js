@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import ItemDetail from "../components/ItemDetail";
 import CustomFetch from "../utils/CustomFetch";
 import dataFromDB from "../utils/Products";
 
 const ItemDetailContainer = () => {
-  const [data, setData] = useState([]);
+  const [data, setDato] = useState({});
+  const { idItem } = useParams();
+
   useEffect(() => {
-    CustomFetch(2000, dataFromDB)
-      .then((datos) => setData(dataFromDB))
+    CustomFetch(
+      2000,
+      dataFromDB.find((item) => item.id === parseInt(idItem))
+    )
+      .then((result) => setDato(result))
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <>
-      <ItemDetail data={data} />
+      <ItemDetail item={data} />
     </>
   );
 };
