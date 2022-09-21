@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function ItemCount({ stock = 1, initial = 1 }) {
+function ItemCount({ stock = 1, initial = 0, onAdd, onDelete }) {
   const [count, setCounter] = useState(initial);
 
   useEffect(() => {
@@ -15,14 +15,9 @@ function ItemCount({ stock = 1, initial = 1 }) {
 
   //disminuir
   const decrease = () => {
-    if (count > initial) {
+    if (count > 0) {
       setCounter((count) => count - 1);
     }
-  };
-
-  //eliminar
-  const reset = () => {
-    setCounter(initial);
   };
 
   return (
@@ -36,9 +31,17 @@ function ItemCount({ stock = 1, initial = 1 }) {
           +
         </button>
         <br />
-        <button className="anadir" onClick={reset}>
-          Reset
+        <br />
+        <button className="control__btn" onClick={() => onDelete()}>
+          Eliminar
         </button>
+        <br />
+        <br />
+        <button className="anadir" onClick={() => onAdd(count)}>
+          Añadir al carrito
+        </button>
+        <br />
+        <br />
       </div>
     </div>
   );
