@@ -15,9 +15,9 @@ const Navbar = () => {
           <Link to="/category/SistemaOperativo"> Sistema Operativo </Link>
           <Link to="/category/Software"> Software </Link>
           <Link to="/category/Juegos"> Juegos </Link>
-          <a>
+          <Link to="/Cart">
             <CartWidget />
-          </a>
+          </Link>
         </nav>
       </header>
     </div>
