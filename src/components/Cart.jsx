@@ -39,12 +39,14 @@ const Cart = () => {
                 </div>
                 <div>$ {item.costItem} each</div>
               </div>
+              <div>$ {test.calcTotalPerItem(item.idItem)}</div>
             </div>
           ))
         ) : (
           <h1></h1>
         )}
       </div>
+      <h3>Total: $ {test.calcSubTotal()} </h3>
     </div>
   );
 };
