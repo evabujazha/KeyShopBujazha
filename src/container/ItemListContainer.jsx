@@ -3,6 +3,9 @@ import ItemList from "../components/ItemList";
 import CustomFetch from "../utils/CustomFetch";
 import dataFromDB from "../utils/Products";
 import { useParams } from "react-router";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
+import { firestoreFetch } from "../utils/firestoreFetch";
 
 const ItemListContainer = () => {
   const [data, setDatos] = useState([]);
@@ -11,13 +14,7 @@ const ItemListContainer = () => {
   console.log(idCategory);
 
   useEffect(() => {
-    CustomFetch(
-      100,
-      dataFromDB.filter((item) => {
-        if (idCategory === undefined) return item;
-        return item.idCategory === idCategory;
-      })
-    )
+    firestoreFetch(idCategory)
       .then((result) => setDatos(result))
       .catch((err) => console.log(err));
   }, [idCategory]);
