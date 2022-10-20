@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import {
   collection,
@@ -62,15 +62,17 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>YOUR CART</h1>
+      <h1>Tu Carrito</h1>
       <div>
         <Link to="/">
-          <button>CONTINUE SHOPPING</button>
+          <button>Seguir comprando</button>
         </Link>
         {test.cartList.length > 0 ? (
-          <button onClick={test.removeList}>DELETE ALL PRODUCTS</button>
+          <button onClick={test.removeList}>
+            Eliminar todos los productos
+          </button>
         ) : (
-          <span>Your cart is empty</span>
+          <span>Tu carrito esta vacio!</span>
         )}
       </div>
       <div>
@@ -78,13 +80,13 @@ const Cart = () => {
           test.cartList.map((item) => (
             <div key={item.idItem}>
               <div>
-                <img src={item.imgItem} />
+                <img src={item.imgItem} alt={item.nameItem} />
                 <div>
                   <span>
-                    <b>Product:</b> {item.nameItem}
+                    <b>Producto:</b> {item.nameItem}
                   </span>
                   <button onClick={() => test.deleteItem(item.idItem)}>
-                    DELETE
+                    Eliminar
                   </button>
                 </div>
               </div>
@@ -92,17 +94,17 @@ const Cart = () => {
                 <div>
                   <div>{item.qtyItem} item(s)</div>
                 </div>
-                <div>$ {item.costItem} each</div>
+                <div>$ {item.costItem} cada uno</div>
               </div>
               <div>$ {test.calcTotalPerItem(item.idItem)}</div>
             </div>
           ))
         ) : (
-          <h1></h1>
+          <p></p>
         )}
       </div>
       <h3>Total: $ {test.calcSubTotal()} </h3>
-      <button onClick={createOrder}>CHECKOUT NOW</button>
+      <button onClick={createOrder}>Finalizar compra</button>
     </div>
   );
 };

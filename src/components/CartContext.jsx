@@ -54,7 +54,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   const deleteItem = (id) => {
-    let result = cartList.filter((item) => item.idItem != id);
+    let result = cartList.filter((item) => item.idItem !== id);
     setCartList(result);
   };
 
